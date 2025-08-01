@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const BACKEND_URL = "http://localhost:5000/api";
+const BACKEND_URL = "https://marketminds-ck1v.onrender.com/api";
 
 const ReviewForm = () => {
   const [input, setInput] = useState("");
