@@ -8,6 +8,7 @@ MarketMinds is a full-stack AI application that intelligently analyzes product r
 
 - **Frontend** (React + Vite): [market-minds-three.vercel.app](https://market-minds-three.vercel.app/)
 - **Backend** (Express + Gemini API): [marketminds-ck1v.onrender.com](https://marketminds-ck1v.onrender.com)
+- **Vedio Walkthrough** (https://drive.google.com/file/d/1g1sAD4FdqWCUUhvpwjwCq0W3rtf1xpU2/view?usp=sharing)
 
 
 ## 🚀 Features
