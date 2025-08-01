@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Review.css"; // ✅ Import the CSS styles
+import "./Review.css";
 
 const BACKEND_URL = "https://marketminds-ck1v.onrender.com/api";
 
@@ -18,12 +18,18 @@ const ReviewForm = () => {
       let response;
 
       if (type === "summary") {
-        const reviewsArray = input.split("\n").filter(line => line.trim() !== "");
-        response = await axios.post(`${BACKEND_URL}/summary`, { reviews: reviewsArray });
+        const reviewsArray = input
+          .split("\n")
+          .filter((line) => line.trim() !== "");
+        response = await axios.post(`${BACKEND_URL}/summary`, {
+          reviews: reviewsArray,
+        });
         setResult(response.data.summary);
       } else {
         const route = type === "analyze" ? "analyze" : type;
-        response = await axios.post(`${BACKEND_URL}/${route}`, { review: input });
+        response = await axios.post(`${BACKEND_URL}/${route}`, {
+          review: input,
+        });
         const key = Object.keys(response.data)[0]; // 'analysis', 'rating', or 'tags'
         setResult(response.data[key]);
       }

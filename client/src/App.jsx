@@ -1,9 +1,10 @@
 import React from "react";
 import ReviewForm from "./components/ReviewForm";
+import "./App.css";
 
 function App() {
   return (
-    <div style={{ padding: 20, maxWidth: 800, margin: "auto" }}>
+    <div className="app-container">
       <h1>🧠 MarketMinds</h1>
       <p>AI-powered Product Review Analyzer</p>
       <ReviewForm />
