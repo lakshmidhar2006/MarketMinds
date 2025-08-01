@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./ReviewForm.css"; // ✅ Import the CSS styles
+import "./Review.css"; // ✅ Import the CSS styles
 
 const BACKEND_URL = "https://marketminds-ck1v.onrender.com/api";
 
@@ -37,9 +37,13 @@ const ReviewForm = () => {
 
   return (
     <div className="review-form-container">
-      <label>
+      <label className="review-label">
         <strong>Select Analysis Type:</strong>
-        <select value={type} onChange={(e) => setType(e.target.value)}>
+        <select
+          className="review-select"
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+        >
           <option value="analyze">Sentiment + Suggestion</option>
           <option value="rating">Rating Prediction</option>
           <option value="tags">Tag Extraction</option>
@@ -48,6 +52,7 @@ const ReviewForm = () => {
       </label>
 
       <textarea
+        className="review-textarea"
         rows={type === "summary" ? 8 : 5}
         placeholder={
           type === "summary"
@@ -58,7 +63,11 @@ const ReviewForm = () => {
         onChange={(e) => setInput(e.target.value)}
       />
 
-      <button onClick={handleAnalyze} disabled={loading}>
+      <button
+        className="review-button"
+        onClick={handleAnalyze}
+        disabled={loading}
+      >
         {loading ? "Analyzing..." : "Analyze"}
       </button>
 
